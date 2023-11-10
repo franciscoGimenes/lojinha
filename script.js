@@ -64,11 +64,15 @@ function updateCarrinho(){
     document.getElementById('cont-carrinho').innerHTML = cont
 }
 
+function limparCarrinho() {
+    document.getElementById('itens-lista').innerHTML = ""
+    document.getElementById("preco-total").innerHTML = "Valor Total: R$ 0.00"
 
-
-
-
-
+    for (let itemNome in itensCarrinho) {
+        delete itensCarrinho[itemNome]
+    }
+    updateCarrinho()
+}
 
 function toggleCarrinho(){
     const itensCarrinhoDiv = document.getElementById('carrinho-itens')
